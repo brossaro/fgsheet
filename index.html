@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>D&D 5e Character Sheet</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="top-section">
+    <div class="field-row">
+      <div class="field large">
+        <label>Character Name</label>
+        <div id="char-name" class="value"></div>
+      </div>
+      <div class="field medium">
+        <label>Class & Level</label>
+        <div id="class-level" class="value"></div>
+      </div>
+      <div class="field medium">
+        <label>Background</label>
+        <div id="background" class="value"></div>
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field medium">
+        <label>Race</label>
+        <div id="race" class="value"></div>
+      </div>
+      <div class="field medium">
+        <label>Alignment</label>
+        <div id="alignment" class="value"></div>
+      </div>
+    </div>
+  </div>
+
+  <input type="file" id="xmlInput" accept=".xml" />
+  <script src="parser.js"></script>
+</body>
+</html>

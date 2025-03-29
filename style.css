@@ -1,0 +1,56 @@
+body {
+  font-family: 'Times New Roman', serif;
+  background-color: white;
+  color: black;
+  margin: 2rem;
+}
+
+.top-section {
+  max-width: 900px;
+  margin: auto;
+  border: 2px solid black;
+  padding: 1rem;
+  background: #fdfdfd;
+}
+
+.field-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  padding: 0.3rem;
+  margin-right: 0.5rem;
+  flex: 1;
+}
+
+.field:last-child {
+  margin-right: 0;
+}
+
+.field label {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 1px solid black;
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.value {
+  font-size: 1.1rem;
+  padding: 0.3rem;
+  min-height: 1.4rem;
+}
+
+.field.large {
+  flex: 2;
+}
+
+.field.medium {
+  flex: 1;
+}
