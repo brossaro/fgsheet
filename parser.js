@@ -80,17 +80,35 @@ function renderCharacter(xml) {
   // Affiche dans la fiche
   document.getElementById("proficiencies").textContent = allProfs.join(", ");
 
-  // Mid column values
-  document.getElementById("ac").textContent = get("root > character > ac");
-  document.getElementById("initiative").textContent = formatMod(get("root > character > initiative"));
-  document.getElementById("speed").textContent = get("root > character > speed");
+// Mid column values
+// Armor Class
+document.getElementById("ac").textContent = get("root > character > defenses > ac > total");
+// Initiative
+document.getElementById("initiative").textContent = formatMod(get("root > character > initiative > total"));
+// Speed
+document.getElementById("speed").textContent = get("root > character > speed > total") + 'ft.';
 
-  document.getElementById("hp-max").textContent = get("root > character > hp > max");
-  document.getElementById("hp-current").textContent = get("root > character > hp > value");
-  document.getElementById("hp-temp").textContent = get("root > character > hp > temp");
+  document.getElementById("hp-max").textContent = get("root > character > hp > total");
+  document.getElementById("hp-current").textContent =  get("root > character > hp > total") - get("root > character > hp > wounds");
+  document.getElementById("hp-temp").textContent = get("root > character > hp > temporary");
 
-  document.getElementById("hit-dice").textContent = get("root > character > hd");
-  document.getElementById("hit-dice-total").textContent = get("root > character > hdtotal");
+// Compute Hit Dice string from classes
+const hitDiceNodes = xml.querySelectorAll("root > character > classes > *");
+const hitDiceParts = [];
+
+hitDiceNodes.forEach(node => {
+  const level = node.querySelector("level")?.textContent || "0";
+  let die = node.querySelector("hddie")?.textContent || "";
+
+  // Nettoie : ne garde que ce qui suit le dernier 'd'
+  const dieValue = die.split("d").pop();  // ex: "dd10" => "10", "d1d12" => "12"
+
+  if (level && dieValue) {
+    hitDiceParts.push(`${level}d${dieValue}`);
+  }
+});
+
+document.getElementById("hit-dice").textContent = hitDiceParts.join(" + ");
 
   // Death Saves
   const successCount = parseInt(get("root > character > deathsavesuccess"), 10);
@@ -100,7 +118,7 @@ function renderCharacter(xml) {
     document.getElementById(`death-success-${i}`).checked = i <= successCount;
     document.getElementById(`death-fail-${i}`).checked = i <= failCount;
   }
-
+  
 }
 
 function getText(parent, tag) {

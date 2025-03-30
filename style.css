@@ -268,8 +268,89 @@ body {
   gap: 0.15in;
 }
 
+/* Attacks & Spellcasting Table */
+.attack-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1in;
+  margin-bottom: 0.1in;
+}
+
+.attack-header,
+.attack-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.1in;
+}
+
+.attack-header {
+  font-weight: bold;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.attack-row input {
+  width: 100%;
+  padding: 0.05in;
+  box-sizing: border-box;
+}
+
+/* Spell notes */
+#atk-notes {
+  width: 100%;
+  padding: 0.1in;
+  resize: vertical;
+  font-family: sans-serif;
+}
+
+/* Equipment */
+.equipment-box {
+  display: flex;
+  gap: 0.2in;
+  margin-top: 0.1in;
+}
+
+.coins {
+  display: flex;
+  flex-direction: column;
+  gap: 0.05in;
+}
+
+.coins label {
+  font-size: 0.7rem;
+  font-weight: bold;
+  margin-bottom: 0.05in;
+}
+
+.coins input {
+  width: 1in;
+  padding: 0.05in;
+  box-sizing: border-box;
+}
+
+#equipment-notes {
+  flex-grow: 1;
+  padding: 0.1in;
+  resize: vertical;
+  font-family: sans-serif;
+}
+
 
 .right-column {
   width: 2.5in;
-  padding-left: 0.25in;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15in;
+}
+
+.right-column textarea {
+  width: 100%;
+  padding: 0.1in;
+  box-sizing: border-box;
+  resize: vertical;
+  font-family: sans-serif;
+}
+
+.section-box.large textarea {
+  height: 4in;
 }
