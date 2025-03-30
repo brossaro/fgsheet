@@ -36,7 +36,6 @@ function renderCharacter(xml) {
   document.getElementById("race").textContent = race;
 
   const abilities = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"];
-
   abilities.forEach(ab => {
     const score = xml.querySelector(`root > character > abilities > ${ab} > score`)?.textContent || "";
     const mod = xml.querySelector(`root > character > abilities > ${ab} > bonus`)?.textContent || "";
