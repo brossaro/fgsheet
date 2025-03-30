@@ -12,33 +12,68 @@ body {
 }
 
 /* En-tête */
-.header {
+.header-official {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.3in;
-  padding: 0.2in;
-  border-bottom: 2px solid black;
+  flex-direction: row;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 0.2in;
+  gap: 0.2in;
 }
 
-.header .field {
-  flex: 1 1 2in;
+/* Partie gauche : Character Name */
+.header-left {
+  flex: 2;
+  border: 2px solid black;
+  padding: 0.15in;
   display: flex;
   flex-direction: column;
-  border: 2px solid black;
-  padding: 0.1in;
+  justify-content: center;
 }
 
-.header .field.wide {
-  flex: 2 1 4in;
-}
-
-.header label {
+.header-left label {
   font-size: 0.75rem;
-  font-weight: bold;
   text-transform: uppercase;
+  font-weight: bold;
   border-bottom: 1px solid black;
   margin-bottom: 0.1in;
 }
+
+.header-left .value.large {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* Partie droite : Grille 3 colonnes, 2 lignes */
+.header-right {
+  flex: 4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 0.2in;
+}
+
+.info-cell {
+  border: 2px solid black;
+  padding: 0.1in;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.info-cell label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+  margin-bottom: 0.05in;
+}
+
+.info-cell .value {
+  font-size: 1rem;
+}
+
+
 
 .value {
   font-size: 1rem;

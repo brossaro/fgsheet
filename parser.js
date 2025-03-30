@@ -23,6 +23,7 @@ function renderCharacter(xml) {
   document.getElementById("background").textContent = get("root > character > background");
   document.getElementById("race").textContent = get("root > character > race");
   document.getElementById("alignment").textContent = get("root > character > alignment");
+  document.getElementById("xp").textContent = get("root > character > exp");
 
   // Abilities
   const abilities = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"];

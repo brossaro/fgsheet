@@ -8,12 +8,37 @@
 <body>
 
   <!-- EN-TÊTE -->
-  <div class="header">
-    <div class="field wide"><label>Character Name</label><div id="char-name" class="value"></div></div>
-    <div class="field"><label>Class & Level</label><div id="class-level" class="value"></div></div>
-    <div class="field"><label>Background</label><div id="background" class="value"></div></div>
-    <div class="field"><label>Race</label><div id="race" class="value"></div></div>
-    <div class="field"><label>Alignment</label><div id="alignment" class="value"></div></div>
+  <div class="header-official">
+    <!-- Partie gauche : Character Name seul -->
+    <div class="header-left">
+      <label>Character Name</label>
+      <div id="char-name" class="value large"></div>
+    </div>
+  
+    <!-- Partie droite : Grille 2 lignes × 3 colonnes -->
+    <div class="header-right">
+      <div class="info-cell">
+        <label>Class & Level</label>
+        <div id="class-level" class="value"></div>
+      </div>
+      <div class="info-cell">
+        <label>Background</label>
+        <div id="background" class="value"></div>
+      </div>
+      <div class="info-cell">
+        <label>Experience Points</label>
+        <div id="xp" class="value"></div>
+      </div>
+      <div class="info-cell">
+        <label>Race</label>
+        <div id="race" class="value"></div>
+      </div>
+      <div class="info-cell">
+        <label>Alignment</label>
+        <div id="alignment" class="value"></div>
+      </div>
+      <div class="info-cell"></div> <!-- Cellule vide pour équilibre -->
+    </div>
   </div>
 
   <!-- MISE EN PAGE -->
