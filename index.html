@@ -7,15 +7,15 @@
 </head>
 <body>
 
-  <!-- EN-TÊTE -->
+  <!-- HEADER -->
   <div class="header-official">
-    <!-- Partie gauche : Character Name seul -->
+    <!-- Character Name (1/3 left) -->
     <div class="header-left">
       <label>Character Name</label>
       <div id="char-name" class="value large"></div>
     </div>
-  
-    <!-- Partie droite : Grille 2 lignes × 3 colonnes -->
+
+    <!-- Other fields (2 rows x 3 columns) -->
     <div class="header-right">
       <div class="info-cell">
         <label>Class & Level</label>
@@ -37,44 +37,40 @@
         <label>Alignment</label>
         <div id="alignment" class="value"></div>
       </div>
-      <div class="info-cell"></div> <!-- Cellule vide pour équilibre -->
+      <div class="info-cell"></div>
     </div>
   </div>
 
-  <!-- MISE EN PAGE -->
+  <!-- MAIN LAYOUT -->
   <div class="main-layout">
-    <!-- COLONNE GAUCHE COMPLÈTE -->
+
+    <!-- LEFT COLUMN -->
     <div class="left-column">
-      <div class="left-inner">
-        <!-- ABILITIES -->
-        <div class="abilities">
-          <div class="ability" id="str"><label>Strength</label><div class="score" id="str-score"></div><div class="mod" id="str-mod"></div></div>
-          <div class="ability" id="dex"><label>Dexterity</label><div class="score" id="dex-score"></div><div class="mod" id="dex-mod"></div></div>
-          <div class="ability" id="con"><label>Constitution</label><div class="score" id="con-score"></div><div class="mod" id="con-mod"></div></div>
-          <div class="ability" id="int"><label>Intelligence</label><div class="score" id="int-score"></div><div class="mod" id="int-mod"></div></div>
-          <div class="ability" id="wis"><label>Wisdom</label><div class="score" id="wis-score"></div><div class="mod" id="wis-mod"></div></div>
-          <div class="ability" id="cha"><label>Charisma</label><div class="score" id="cha-score"></div><div class="mod" id="cha-mod"></div></div>
+      <div class="left-upper">
+        <div class="abilities-column">
+          <div class="ability-box" id="str"><label>Strength</label><div class="score" id="str-score"></div><div class="mod" id="str-mod"></div></div>
+          <div class="ability-box" id="dex"><label>Dexterity</label><div class="score" id="dex-score"></div><div class="mod" id="dex-mod"></div></div>
+          <div class="ability-box" id="con"><label>Constitution</label><div class="score" id="con-score"></div><div class="mod" id="con-mod"></div></div>
+          <div class="ability-box" id="int"><label>Intelligence</label><div class="score" id="int-score"></div><div class="mod" id="int-mod"></div></div>
+          <div class="ability-box" id="wis"><label>Wisdom</label><div class="score" id="wis-score"></div><div class="mod" id="wis-mod"></div></div>
+          <div class="ability-box" id="cha"><label>Charisma</label><div class="score" id="cha-score"></div><div class="mod" id="cha-mod"></div></div>
         </div>
-
-        <!-- À DROITE DES ABILITIES -->
-        <div class="left-info">
-          <div class="field small"><label>Inspiration</label><div id="inspiration" class="value"></div></div>
-          <div class="field small"><label>Proficiency Bonus</label><div id="prof-bonus" class="value"></div></div>
-
-          <div class="saves-skills">
-            <label>Saving Throws</label>
-            <ul id="saving-throws">
-              <li><input type="checkbox" id="saveprof-str"> STR: <span id="save-str"></span></li>
-              <li><input type="checkbox" id="saveprof-dex"> DEX: <span id="save-dex"></span></li>
-              <li><input type="checkbox" id="saveprof-con"> CON: <span id="save-con"></span></li>
-              <li><input type="checkbox" id="saveprof-int"> INT: <span id="save-int"></span></li>
-              <li><input type="checkbox" id="saveprof-wis"> WIS: <span id="save-wis"></span></li>
-              <li><input type="checkbox" id="saveprof-cha"> CHA: <span id="save-cha"></span></li>
+        <div class="ability-info">
+          <div class="banner-field"><label>Inspiration</label><div id="inspiration" class="value"></div></div>
+          <div class="banner-field"><label>Proficiency Bonus</label><div id="prof-bonus" class="value"></div></div>
+          <div class="section-box">
+            <div class="section-title">Saving Throws</div>
+            <ul>
+              <li><input type="checkbox" id="saveprof-str"> Strength: <span id="save-str"></span></li>
+              <li><input type="checkbox" id="saveprof-dex"> Dexterity: <span id="save-dex"></span></li>
+              <li><input type="checkbox" id="saveprof-con"> Constitution: <span id="save-con"></span></li>
+              <li><input type="checkbox" id="saveprof-int"> Intelligence: <span id="save-int"></span></li>
+              <li><input type="checkbox" id="saveprof-wis"> Wisdom: <span id="save-wis"></span></li>
+              <li><input type="checkbox" id="saveprof-cha"> Charisma: <span id="save-cha"></span></li>
             </ul>
           </div>
-
-          <div class="saves-skills">
-            <label>Skills</label>
+          <div class="section-box">
+            <div class="section-title">Skills</div>
             <ul id="skills">
               <li><input type="checkbox" id="skill-acrobatics-prof"> Acrobatics (Dex): <span id="skill-acrobatics"></span></li>
               <li><input type="checkbox" id="skill-animalhandling-prof"> Animal Handling (Wis): <span id="skill-animalhandling"></span></li>
@@ -98,14 +94,17 @@
           </div>
         </div>
       </div>
-
-      <!-- SECTION BASSE -->
-      <div class="field small full"><label>Passive Perception</label><div id="passive-perception" class="value"></div></div>
-      <div class="field small full"><label>Other Proficiencies & Languages</label><div id="proficiencies" class="value"></div></div>
+      <div class="banner-field full-width">
+        <label>Passive Wisdom (Perception)</label>
+        <div id="passive-perception" class="value"></div>
+      </div>
+      <div class="section-box full-width">
+        <div class="section-title">Other Proficiencies & Languages</div>
+        <div id="proficiencies" class="value"></div>
+      </div>
     </div>
 
-    
-    <!-- COLONNE DU MILIEU -->
+       <!-- COLONNE DU MILIEU -->
   <div class="middle-column">
     <div class="mid-section">
 
@@ -177,9 +176,11 @@
     </div>
   </div>
 
+    <!-- RIGHT COLUMN (placeholder) -->
+    <div class="right-column">
+      <!-- Other content here -->
+    </div>
 
-  <!-- COLONNE DE Droite -->
-    <div class="right-column"></div>
   </div>
 
   <input type="file" id="xmlInput" accept=".xml" />
