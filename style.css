@@ -15,7 +15,7 @@ body {
 .header-official {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 8.5in;
   box-sizing: border-box;
   margin-bottom: 0.2in;
   gap: 0.2in;
