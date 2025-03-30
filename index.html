@@ -6,74 +6,155 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- En-tête -->
-  <div class="top-section">
-    <div class="field-row">
-      <div class="field large">
-        <label>Character Name</label>
-        <div id="char-name" class="value"></div>
+
+  <!-- EN-TÊTE -->
+  <div class="header">
+    <div class="field wide"><label>Character Name</label><div id="char-name" class="value"></div></div>
+    <div class="field"><label>Class & Level</label><div id="class-level" class="value"></div></div>
+    <div class="field"><label>Background</label><div id="background" class="value"></div></div>
+    <div class="field"><label>Race</label><div id="race" class="value"></div></div>
+    <div class="field"><label>Alignment</label><div id="alignment" class="value"></div></div>
+  </div>
+
+  <!-- MISE EN PAGE -->
+  <div class="main-layout">
+    <!-- COLONNE GAUCHE COMPLÈTE -->
+    <div class="left-column">
+      <div class="left-inner">
+        <!-- ABILITIES -->
+        <div class="abilities">
+          <div class="ability" id="str"><label>Strength</label><div class="score" id="str-score"></div><div class="mod" id="str-mod"></div></div>
+          <div class="ability" id="dex"><label>Dexterity</label><div class="score" id="dex-score"></div><div class="mod" id="dex-mod"></div></div>
+          <div class="ability" id="con"><label>Constitution</label><div class="score" id="con-score"></div><div class="mod" id="con-mod"></div></div>
+          <div class="ability" id="int"><label>Intelligence</label><div class="score" id="int-score"></div><div class="mod" id="int-mod"></div></div>
+          <div class="ability" id="wis"><label>Wisdom</label><div class="score" id="wis-score"></div><div class="mod" id="wis-mod"></div></div>
+          <div class="ability" id="cha"><label>Charisma</label><div class="score" id="cha-score"></div><div class="mod" id="cha-mod"></div></div>
+        </div>
+
+        <!-- À DROITE DES ABILITIES -->
+        <div class="left-info">
+          <div class="field small"><label>Inspiration</label><div id="inspiration" class="value"></div></div>
+          <div class="field small"><label>Proficiency Bonus</label><div id="prof-bonus" class="value"></div></div>
+
+          <div class="saves-skills">
+            <label>Saving Throws</label>
+            <ul id="saving-throws">
+              <li><input type="checkbox" id="saveprof-str"> STR: <span id="save-str"></span></li>
+              <li><input type="checkbox" id="saveprof-dex"> DEX: <span id="save-dex"></span></li>
+              <li><input type="checkbox" id="saveprof-con"> CON: <span id="save-con"></span></li>
+              <li><input type="checkbox" id="saveprof-int"> INT: <span id="save-int"></span></li>
+              <li><input type="checkbox" id="saveprof-wis"> WIS: <span id="save-wis"></span></li>
+              <li><input type="checkbox" id="saveprof-cha"> CHA: <span id="save-cha"></span></li>
+            </ul>
+          </div>
+
+          <div class="saves-skills">
+            <label>Skills</label>
+            <ul id="skills">
+              <li><input type="checkbox" id="skill-acrobatics-prof"> Acrobatics (Dex): <span id="skill-acrobatics"></span></li>
+              <li><input type="checkbox" id="skill-animalhandling-prof"> Animal Handling (Wis): <span id="skill-animalhandling"></span></li>
+              <li><input type="checkbox" id="skill-arcana-prof"> Arcana (Int): <span id="skill-arcana"></span></li>
+              <li><input type="checkbox" id="skill-athletics-prof"> Athletics (Str): <span id="skill-athletics"></span></li>
+              <li><input type="checkbox" id="skill-deception-prof"> Deception (Cha): <span id="skill-deception"></span></li>
+              <li><input type="checkbox" id="skill-history-prof"> History (Int): <span id="skill-history"></span></li>
+              <li><input type="checkbox" id="skill-insight-prof"> Insight (Wis): <span id="skill-insight"></span></li>
+              <li><input type="checkbox" id="skill-intimidation-prof"> Intimidation (Cha): <span id="skill-intimidation"></span></li>
+              <li><input type="checkbox" id="skill-investigation-prof"> Investigation (Int): <span id="skill-investigation"></span></li>
+              <li><input type="checkbox" id="skill-medicine-prof"> Medicine (Wis): <span id="skill-medicine"></span></li>
+              <li><input type="checkbox" id="skill-nature-prof"> Nature (Int): <span id="skill-nature"></span></li>
+              <li><input type="checkbox" id="skill-perception-prof"> Perception (Wis): <span id="skill-perception"></span></li>
+              <li><input type="checkbox" id="skill-performance-prof"> Performance (Cha): <span id="skill-performance"></span></li>
+              <li><input type="checkbox" id="skill-persuasion-prof"> Persuasion (Cha): <span id="skill-persuasion"></span></li>
+              <li><input type="checkbox" id="skill-religion-prof"> Religion (Int): <span id="skill-religion"></span></li>
+              <li><input type="checkbox" id="skill-sleightofhand-prof"> Sleight of Hand (Dex): <span id="skill-sleightofhand"></span></li>
+              <li><input type="checkbox" id="skill-stealth-prof"> Stealth (Dex): <span id="skill-stealth"></span></li>
+              <li><input type="checkbox" id="skill-survival-prof"> Survival (Wis): <span id="skill-survival"></span></li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="field medium">
-        <label>Class & Level</label>
-        <div id="class-level" class="value"></div>
-      </div>
-      <div class="field medium">
-        <label>Background</label>
-        <div id="background" class="value"></div>
-      </div>
+
+      <!-- SECTION BASSE -->
+      <div class="field small full"><label>Passive Perception</label><div id="passive-perception" class="value"></div></div>
+      <div class="field small full"><label>Other Proficiencies & Languages</label><div id="proficiencies" class="value"></div></div>
     </div>
-    <div class="field-row">
-      <div class="field medium">
-        <label>Race</label>
-        <div id="race" class="value"></div>
+
+    
+    <!-- COLONNE DU MILIEU -->
+  <div class="middle-column">
+    <div class="mid-section">
+
+      <!-- Armor Class / Initiative / Speed -->
+      <div class="three-box-row">
+        <div class="mini-box">
+          <label>Armor Class</label>
+          <div id="ac" class="box-value"></div>
+        </div>
+        <div class="mini-box">
+          <label>Initiative</label>
+          <div id="initiative" class="box-value"></div>
+        </div>
+        <div class="mini-box">
+          <label>Speed</label>
+          <div id="speed" class="box-value"></div>
+        </div>
       </div>
-      <div class="field medium">
-        <label>Alignment</label>
-        <div id="alignment" class="value"></div>
+
+      <!-- Hit Points -->
+      <div class="field-box">
+        <label>Hit Point Maximum</label>
+        <div id="hp-max" class="value"></div>
       </div>
+      <div class="field-box">
+        <label>Current Hit Points</label>
+        <div id="hp-current" class="value"></div>
+      </div>
+      <div class="field-box">
+        <label>Temporary Hit Points</label>
+        <div id="hp-temp" class="value"></div>
+      </div>
+
+      <!-- Hit Dice -->
+      <div class="two-box-row">
+        <div class="field-box">
+          <label>Hit Dice</label>
+          <div id="hit-dice" class="value"></div>
+        </div>
+        <div class="field-box">
+          <label>Total</label>
+          <div id="hit-dice-total" class="value"></div>
+        </div>
+      </div>
+
+      <!-- Death Saves -->
+      <div class="death-saves">
+        <label>Death Saves</label>
+        <div class="saves-group">
+          <div>
+            <span>Successes</span>
+            <div class="checkbox-row">
+              <input type="checkbox" id="death-success-1" />
+              <input type="checkbox" id="death-success-2" />
+              <input type="checkbox" id="death-success-3" />
+            </div>
+          </div>
+          <div>
+            <span>Failures</span>
+            <div class="checkbox-row">
+              <input type="checkbox" id="death-fail-1" />
+              <input type="checkbox" id="death-fail-2" />
+              <input type="checkbox" id="death-fail-3" />
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <!-- Corps de page -->
-  <div class="main-section">
-    <!-- Abilities à gauche -->
-    <div class="abilities-column">
-      <div class="ability" id="str">
-        <label>Strength</label>
-        <div class="score" id="str-score"></div>
-        <div class="mod-circle" id="str-mod"></div>
-      </div>
-      <div class="ability" id="dex">
-        <label>Dexterity</label>
-        <div class="score" id="dex-score"></div>
-        <div class="mod-circle" id="dex-mod"></div>
-      </div>
-      <div class="ability" id="con">
-        <label>Constitution</label>
-        <div class="score" id="con-score"></div>
-        <div class="mod-circle" id="con-mod"></div>
-      </div>
-      <div class="ability" id="int">
-        <label>Intelligence</label>
-        <div class="score" id="int-score"></div>
-        <div class="mod-circle" id="int-mod"></div>
-      </div>
-      <div class="ability" id="wis">
-        <label>Wisdom</label>
-        <div class="score" id="wis-score"></div>
-        <div class="mod-circle" id="wis-mod"></div>
-      </div>
-      <div class="ability" id="cha">
-        <label>Charisma</label>
-        <div class="score" id="cha-score"></div>
-        <div class="mod-circle" id="cha-mod"></div>
-      </div>
-    </div>
 
-    <!-- Colonne de droite (vide pour l’instant) -->
-    <div class="right-column">
-      <!-- Future content -->
-    </div>
+  <!-- COLONNE DE Droite -->
+    <div class="right-column"></div>
   </div>
 
   <input type="file" id="xmlInput" accept=".xml" />
